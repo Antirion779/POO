@@ -23,11 +23,7 @@ public class BadBoyData : Characters, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         InventoryManager.instance.NameText.text = "Name : " + role.ToString() + name.ToString();
-        InventoryManager.instance.lifeText.text = "Life : " + (life.ToString());
-        InventoryManager.instance.armorText.text = "Armor : " + (armor.ToString());
-        InventoryManager.instance.dammageText.text = "Dammage : " + (damage.ToString());
-        InventoryManager.instance.moneyText.text = "Money : " + (money.ToString());
-        InventoryManager.instance.rangeText.text = "Range : " + (range.ToString());
+        base.OnPointerEnter(eventData);
         InventoryManager.instance.classText.text = "Class : " + (role.ToString());
         InventoryManager.instance.reputevilText.text = "Evilness : " + (evilness.ToString());
         InventoryManager.instance.categorieText.text = "Categorie : Bad Boy";

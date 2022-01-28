@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance { get { return _instance; } }
 
     public List<Characters> charactersList;
+    public List<Items> itemsList;
 
     [Header("Text")] 
     [SerializeField] public Text NameText;

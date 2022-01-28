@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class Characters : MonoBehaviour
+
+public class Characters : MonoBehaviour, IPointerEnterHandler
 {
 
     [SerializeField] private int _life;
@@ -46,8 +48,18 @@ public class Characters : MonoBehaviour
         get { return _range; }
         set { _range = value; }
     }
+
     public virtual void Info()
     {
-       Debug.Log(name + " says Hello !");
+        Debug.Log(name + " says Hello !");
+    }
+
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+        InventoryManager.instance.lifeText.text = "Life : " + (life.ToString());
+        InventoryManager.instance.armorText.text = "Armor : " + (armor.ToString());
+        InventoryManager.instance.dammageText.text = "Dammage : " + (damage.ToString());
+        InventoryManager.instance.moneyText.text = "Money : " + (money.ToString());
+        InventoryManager.instance.rangeText.text = "Range : " + (range.ToString());
     }
 }
