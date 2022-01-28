@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GoodboyData : Characters, IPointerEnterHandler
+public class BadBoyData : Characters, IPointerEnterHandler
 {
     public enum Class
     {
-        Mage,
-        Guerrier,
-        Archer,
-    };
+        DarkMage,
+        Oger,
+        Skeleton,
+    }
 
     public Class role;
 
-    [SerializeField] private int _reputation;
-    public int reputation
+    [SerializeField] private int _evilness;
+    public int evilness
     {
-        get { return _reputation; }
-        set { _reputation = value; }
+        get { return _evilness; }
+        set { _evilness = value; }
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         InventoryManager.instance.NameText.text = "Name : " + role.ToString() + name.ToString();
@@ -30,12 +29,7 @@ public class GoodboyData : Characters, IPointerEnterHandler
         InventoryManager.instance.moneyText.text = "Money : " + (money.ToString());
         InventoryManager.instance.rangeText.text = "Range : " + (range.ToString());
         InventoryManager.instance.classText.text = "Class : " + (role.ToString());
-        InventoryManager.instance.reputevilText.text = "Réputation : " + (reputation.ToString());
-        InventoryManager.instance.categorieText.text = "Categorie : Good Boy";
+        InventoryManager.instance.reputevilText.text = "Evilness : " + (evilness.ToString());
+        InventoryManager.instance.categorieText.text = "Categorie : Bad Boy";
     }
-
-    /*public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("reset");
-    }*/
 }

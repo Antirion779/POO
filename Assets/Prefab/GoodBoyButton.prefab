@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1946247736302591433}
   - component: {fileID: 8096952257753993007}
   m_Layer: 5
-  m_Name: Good Boy Button
+  m_Name: GoodBoyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
